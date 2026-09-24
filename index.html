@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#101a2b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Chordlings" />
+  <title>Chordlings: Island Orchestra</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="boot" class="boot">
+    <div class="bootHalo"></div>
+    <img src="icon.png" alt="Chordlings app icon" class="bootIcon" />
+    <h1>Chordlings</h1>
+    <p>Island Orchestra</p>
+    <small>7 islands · 8-track songs · original monsters</small>
+    <button id="startBtn" class="bootPlay">Enter the Orchestra</button>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <div class="brand">
+        <img src="icon.png" alt="" />
+        <div><b>Chordlings</b><small id="islandLabel">Verdant Isle</small></div>
+      </div>
+      <div class="wallet" aria-label="Currencies">
+        <span class="walletItem"><i class="currencyIcon coin"></i><b id="coins">0</b></span>
+        <span class="walletItem"><i class="currencyIcon gem"></i><b id="gems">0</b></span>
+        <button id="starShopBtn" class="walletItem walletButton"><i class="currencyIcon star"></i><b id="stars">0</b></button>
+        <button id="resonatorTopBtn" class="walletItem walletButton"><i class="currencyIcon shard"></i><b id="shards">0</b></button>
+        <button id="eventTopBtn" class="walletItem walletButton eventWallet hidden"><i class="currencyIcon hex"></i><b id="candy">0</b></button>
+      </div>
+      <button id="giftBtn" class="round iconButton" aria-label="Daily reward"><span data-ui-icon="gift"></span></button>
+      <button id="settingsBtn" class="round iconButton" aria-label="Settings"><span data-ui-icon="gear"></span></button>
+    </header>
+
+    <main>
+      <section id="islandScene" class="scene" aria-label="Current island">
+        <div id="islandArt" class="islandArt"></div>
+        <div id="songHud" class="songHud"></div>
+        <div id="eventRibbon" class="eventRibbon hidden"></div>
+        <div id="monsterLayer" class="monsterLayer"></div>
+        <div class="stage">
+          <button id="nurseryBtn" class="building"><span class="buildingGlyph" data-ui-icon="egg"></span><b>Nursery</b><small id="nurseryText">Empty</small></button>
+          <button id="breederBtn" class="building"><span class="buildingGlyph" data-ui-icon="dna"></span><b>Harmony Hut</b><small id="breederText">Ready</small></button>
+          <button id="marketBtn" class="building"><span class="buildingGlyph" data-ui-icon="shop"></span><b>Market</b><small>Eggs & upgrades</small></button>
+          <button id="mixerBtn" class="building"><span class="buildingGlyph" data-ui-icon="mixer"></span><b>8-Track Mixer</b><small>Hear the arrangement</small></button>
+          <button id="resonatorBtn" class="building primeBuilding"><span class="buildingGlyph" data-ui-icon="resonator"></span><b>Titan Resonator</b><small>2% breed · shard summon</small></button>
+        </div>
+      </section>
+
+      <nav class="bottomNav">
+        <button data-panel="islands"><span data-ui-icon="island"></span><small>Islands</small></button>
+        <button data-panel="book"><span data-ui-icon="book"></span><small>Book</small></button>
+        <button data-panel="breed"><span data-ui-icon="dna"></span><small>Breed</small></button>
+        <button data-panel="quests"><span data-ui-icon="quest"></span><small>Quests</small></button>
+        <button data-panel="games"><span data-ui-icon="game"></span><small>Games</small></button>
+      </nav>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modalCard">
+      <button id="closeModal" class="close" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="game.js"></script>
+</body>
+</html>
